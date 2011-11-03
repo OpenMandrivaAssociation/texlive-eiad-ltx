@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/eiad
+# catalog-date 2007-02-06 22:00:42 +0100
+# catalog-license lppl
+# catalog-version 1.0
 Name:		texlive-eiad-ltx
 Version:	1.0
 Release:	1
@@ -44,6 +50,7 @@ package, but not provided there.
 #- source
 %doc %{_texmfdistdir}/source/latex/eiad-ltx/eiad.dtx
 %doc %{_texmfdistdir}/source/latex/eiad-ltx/eiad.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -54,3 +61,5 @@ package, but not provided there.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
