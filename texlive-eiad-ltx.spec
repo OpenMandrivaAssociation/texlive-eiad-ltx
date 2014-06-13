@@ -6,7 +6,7 @@
 # catalog-version 1.0
 Name:		texlive-eiad-ltx
 Version:	1.0
-Release:	6
+Release:	7
 Summary:	LaTeX support for the eiad font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/eiad
