@@ -1,19 +1,13 @@
-# revision 15878
-# category Package
-# catalog-ctan /macros/latex/contrib/eiad
-# catalog-date 2007-02-06 22:00:42 +0100
-# catalog-license lppl
-# catalog-version 1.0
 Name:		texlive-eiad-ltx
-Version:	1.0
-Release:	11
+Version:	15878
+Release:	1
 Summary:	LaTeX support for the eiad font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/eiad
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eiad-ltx.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eiad-ltx.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eiad-ltx.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eiad-ltx.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eiad-ltx.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eiad-ltx.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -25,12 +19,12 @@ offers a couple of MetaFont files described in the font
 package, but not provided there.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -44,24 +38,11 @@ package, but not provided there.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.0-2
-+ Revision: 751388
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.0-1
-+ Revision: 718315
-- texlive-eiad-ltx
-- texlive-eiad-ltx
-- texlive-eiad-ltx
-- texlive-eiad-ltx
-
