@@ -1,6 +1,6 @@
 Name:		texlive-eiad-ltx
 Version:	15878
-Release:	1
+Release:	2
 Summary:	LaTeX support for the eiad font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/eiad
